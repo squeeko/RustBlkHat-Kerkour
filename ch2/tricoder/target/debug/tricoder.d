@@ -1,1 +1,1 @@
-/Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/target/debug/tricoder: /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/main.rs
+/Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/target/debug/tricoder: /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/common_ports.rs /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/error.rs /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/main.rs /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/model.rs /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/ports.rs /Users/squeeko/RustBlkHat-Kerkour/ch2/tricoder/src/subdomains.rs

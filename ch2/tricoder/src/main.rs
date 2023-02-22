@@ -10,7 +10,7 @@ mod subdomains;
 use model::Subdomain;
 mod common_ports;
 
-fn main() {} -> Result<(), anyhow::Error> {
+fn main() -> Result<(), anyhow::Error> {
     let args: Vec<String> = env::args().collect();
 
     if args.len() != 2 {
@@ -27,23 +27,23 @@ fn main() {} -> Result<(), anyhow::Error> {
 
     //use a custom threadpool to improve speed
     /*
-    https://github.com/rayon-rs/rayon
-    https://smallcultfollowing.com/babysteps/blog/2015/12/18/rayon-data-parallelism-in-rust/
-    Rayon is a data-parallelism library for Rust. It is extremely lightweight and makes it easy to convert a sequential computation into a parallel one. It also guarantees data-race freedom. 
+        https://github.com/rayon-rs/rayon
+        https://smallcultfollowing.com/babysteps/blog/2015/12/18/rayon-data-parallelism-in-rust/
+        Rayon is a data-parallelism library for Rust. It is extremely lightweight and makes it easy to convert a sequential computation into a parallel one. It also guarantees data-race freedom.
 
-    use rayon::prelude::*;
-    fn sum_of_squares(input: &[i32]) -> i32 {
-        input.par_iter() // <-- just change that!
-            .map(|&i| i * i)
-            .sum()
-}
-     */
+        use rayon::prelude::*;
+        fn sum_of_squares(input: &[i32]) -> i32 {
+            input.par_iter() // <-- just change that!
+                .map(|&i| i * i)
+                .sum()
+    }
+         */
 
     let pool = rayon::ThreadPoolBuilder::new()
         .num_threads(256)
         .build()
         .unwrap();
-    
+
     // pool.install is required to use our custom threadpool, instead of rayon's default one
 
     pool.install(|| {
@@ -64,6 +64,4 @@ fn main() {} -> Result<(), anyhow::Error> {
     });
 
     Ok(())
-
-
 }
