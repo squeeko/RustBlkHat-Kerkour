@@ -65,3 +65,36 @@ fn main() -> Result<(), anyhow::Error> {
 
     Ok(())
 }
+
+/*
+Output:
+
+cargo run -- kerkour.com
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
+     Running `target/debug/tricoder kerkour.com`
+social.kerkour.com:
+     80
+     443
+     8080
+     8443
+
+academy.kerkour.com:
+     80
+     443
+     8080
+     8443
+
+www.kerkour.com:
+     80
+     443
+     8080
+     8443
+
+kerkour.com:
+     80
+     443
+     8080
+     8443
+
+[16:59:11] [cost 40.970s] cargo run -- kerkour.com
+ */
